@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+<style>
+      header {background-color:orange}
+	  th {color:red}
+</style>
+
+<body>
+	<header>
+		<div id="logo"><img src="../static/food1.png">The Rohit Shelar&nbsp;Food Store</div>
+		<nav>  
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a>
+				<li><a href="{{url_for('veg')}}">Veg</a>
+				<li><a href="{{url_for('non_veg')}}">Non-Veg</a>
+				<li><a href="{{url_for('order')}}">Order</a>
+			</ul>
+		</nav><br><br>
+		 <h2 align="center">Fresh Foods Keep Heart Fresh</h2>
+	</header>
+	<section style="color:blue";>
+		<h2>Your Veg Order As Below Will Deliver Soon.</h2>
+	</section>
+	
+	<section id="pageContent">
+		<main role="main">
+			<table border="2" width="800">
+			<tr>
+			    <th>Customer_Name</th>
+				<th>Dish_Name</th>
+				<th>Address</th>
+				<th>Contact</th>
+				<th colspan="2">Action</th>
+			</tr>
+			{% for row in ordata %}
+			<tr align="center">
+			    <td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td>{{row[4]}}</td>
+				<td><a href="{{url_for('delete',id=row[0])}}">Delivered</a></td>
+			</tr>
+			{% endfor %}
+			</table>
+		</main>
+		
+	</section><br><br>
+	<section style="color:blue";>
+	    <h2> Your Non-Veg Order as Below</h2>
+	</section>
+	<section id="pageContent">
+		<main role="main">
+			<table border="2" width="800">
+			<tr>
+			    <th>Customer_Name</th>
+				<th>Dish_Name</th>
+				<th>Address</th>
+				<th>Contact</th>
+				<th colspan="2">Action</th>
+			</tr>
+			{% for row in ordata1 %}
+			<tr align="center">
+			    <td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td>{{row[4]}}</td>
+				<td><a href="{{url_for('delete',id=row[0])}}">Delivered</a></td>
+			</tr>
+			{% endfor %}
+			</table>
+		</main>
+		
+	</section>
+
+
+</body>
+
+</html>

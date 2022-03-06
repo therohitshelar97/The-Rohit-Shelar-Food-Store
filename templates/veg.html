@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+<style>
+      footer,header {background-color:orange}
+	  body {background-color:pink}
+	  tr {color:black}
+	  th {color:blue}
+	  td,th,tr{  
+	        border:1px solid red;
+	        border-collapse:collapse
+			   }
+</style>
+
+<body>
+	<header>
+		<div id="logo"><img src="../static/food1.png">The Rohit Shelar&nbsp;Food Store</div>
+		<nav>  
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a>
+				<li><a href="{{url_for('veg')}}">Veg</a>
+				<li><a href="{{url_for('non_veg')}}">Non-Veg</a>
+				<li><a href="{{url_for('order')}}">Order</a>
+			</ul>
+		</nav><br><br>
+	    <h2 align="center">Fresh Foods Keep Health Good</h2>
+	</header>
+	<section>
+		<strong style="color:blue";>You Can Order Veg Dishesh Here.</strong>
+	</section>
+	          <h2 align="center" style="color:red";> You Can Order below Veg Dishes</h2>
+	<section id="pageContent">
+		<main role="main">
+			<table border="1" width="400">
+			<tr>
+			    <th>Sr No.</th>
+			    <th>Dish_Names</th>
+				<th>Type</th>
+				<th>Prize</th>
+			</tr>
+			{% for row in userdata %}
+			<tr align="center">
+			    <td>{{row[0]}}</td>
+			    <td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+			</tr>
+			{% endfor %}
+			</table>
+		</main>
+		
+	</section><br><br><br><br>
+	<aside>
+	    <div id="img">
+			<img src="../static/veg14.jpg" width="200" height="100">
+			<img src="../static/veg15.jpg" width="200" height="100" style="float:right">
+			<img src="../static/veg16.jpg" width="200" height="100" style="float:right">
+			<img src="../static/veg17.jpg" width="200" height="100" style="float:right">
+		</div>
+	</aside>
+	<section>
+	    <form style="color:red" method="POST" action="{{url_for('create')}}">
+		    <label for="uname">Customer_Name</label>
+			<input type="text" name="uname" id="uname"/><br><br>
+			<label for="dname">Dish_Name</label>
+			<input type="text" name="dname" id="dname"/><br><br>
+			<label for="addr">Address</label>
+			<input type="text" name="addr" id="addr"/><br><br>
+			<label for="contact">Contact</label>
+			<input type="number" name="contact" id="contact"/><br><br>
+			<input type="submit" name="add user" value="Order Place here"/>
+		</form>
+	</section>
+	<div id="img">
+		<img src="../static/veg12.jpg" width="400" height="200">
+		<img src="../static/veg11.jpg" width="400" height="200" style="float:left">
+		<img src="../static/veg13.jpg" width="400" height="200" style="float:left">
+		<img src="../static/veg18.jpg" width="149" height="200" style="float:right">
+	</div>
+	
+	
+	<footer>
+		<p>Owner: The Rohit Shelar</p>
+		<p>Address: The Rohit Shelar Food store Near To The Talegaon Railway Station, Talegaon Dabhade,Pune Contact:7066219553................</P>
+	</footer>
+
+
+
+</body>
+
+</html>

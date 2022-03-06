@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+<style>
+      footer,header{background-color:orange}
+	  body{background-color:pink}
+	  tr{color:black}
+	  th{color:blue}
+	  td,th,tr{  
+	        border:1px solid red;
+	        border-collapse:collapse
+			padding:15px
+			   }
+</style>
+
+<body>
+	<header>
+		<div id="logo"><img src="../static/food1.png">The Rohit Shelar&nbsp;Food Store</div>
+		<nav>  
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a>
+				<li><a href="{{url_for('veg')}}">Veg</a>
+				<li><a href="{{url_for('non_veg')}}">Non-Veg</a>
+				<li><a href="{{url_for('order')}}">Order</a>
+			</ul>
+		</nav><br><br>
+		 <h2 align="center">Fresh Foods Keep Body Strong</h2>
+	</header>
+	<section>
+		<strong style="color:blue">You Can Order Non-Veg Dishes Here.</strong>
+	</section>
+	<aside>
+		<div id="img"><img src="../static/non14.jpg" width="420" height="110" style="float:right"></div>
+		<div id="img"><img src="../static/non13.jpg" width="420" height="110" style="float:right"></div>
+		<div id="img"><img src="../static/non12.jpg" width="420" height="110" style="float:right"></div>
+	</aside>
+
+	
+	<section id="pageContent">
+		<main role="main">
+		<table border="1" width="400">
+			<tr>
+			    <th>Sr No.</th>
+			    <th>Dish_Names</th>
+				<th>Type</th>
+				<th>Prize</th>
+			</tr>
+			{% for row in userdata1 %}
+			<tr align="center">
+			    <td>{{row[0]}}
+			    <td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+			</tr>
+			{% endfor %}
+			</table>
+		</main>
+	</section><br><br><br><br>
+	
+	<section>
+	    <form style="color:red" method="POST" action="{{url_for('create1')}}">
+		    <label for="uname1">Customer_Name</label>
+			<input type="text" name="uname1" id="uname1"/><br><br>
+			<label for="dname1">Dish_Name</label>
+			<input type="text" name="dname1" id="dname1"/><br><br>
+			<label for="addr1">Address</label>
+			<input type="text" name="addr1" id="addr1"/><br><br>
+			<label for="contact1">Contact</label>
+			<input type="number" name="contact1" id="contact1"/><br><br>
+			<input type="submit" name="add user" value="Order Place here"/>
+		</form>
+	</section>
+	<section>
+        <div id="img">
+		    <img src="../static/non6.jpg" width="420" height="160">
+		    <img src="../static/non7.jpg" width="420" height="160" style="float:left">
+			<img src="../static/non5.jpg" width="160" height="160" style="float:right">
+		</div>
+	</section>
+	
+
+
+</body>
+
+</html>

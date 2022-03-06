@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+<style>
+      header,footer {background-color:orange}
+	  body {background-color:pink}
+	  . div {
+		  float: left;
+		  width: 33.33%;
+		  padding: 5px;
+		}
+
+</style>
+
+<body>
+	<header>
+		<div id="logo"><img src="../static/food1.png">The Rohit Shelar&nbsp;Food Store</div>
+		<nav>  
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a>
+				<li><a href="{{url_for('veg')}}">Veg</a>
+				<li><a href="{{url_for('non_veg')}}">Non-Veg</a>
+				<li><a href="{{url_for('order')}}">Order</a>
+			</ul>
+		</nav><br><br>
+		<h2 align="center">Fresh Foods Keep Mind Fresh</h2>
+	</header>
+	<section>
+		<strong style='color:blue'>Welcome To The Rohit Shelar Food Store.</strong>
+	</section>
+	<section id="pageContent">
+		<main role="main">
+			<article>
+				<h2 style='color:red'>Our Speciality</h2>
+				<p style='color:blue'>You can find here all types of foods.Veg,Non-Veg with all types of plates with number one quality</p>
+				<p style='color:blue'>We coock all types of dishes from veg to non-veg with seperate kitchen room</p>
+		        <div id="img">
+				<img src="../static/pic1.jpg" width="200" height="100">
+				<img src="../static/pic2.jpg" width="200" height="100" style="float:left">
+				<img src="../static/non1.jpg" width="200" height="100" style="float:left">
+				</div>
+			</article>
+			<article>
+			    <h2 style='color:red'><a style='color:red' href="{{url_for('veg')}}">Veg Special Dishes</a></h2>
+			    <p style='color:blue'>Special veg dishesh Like Paneer Masala, Paneer Bhaji, Shev Bhaji, Kaju curry, Paneer Tikka Masala, Mix Kolhapuri.etc</p>
+				<div id="img">
+				<img src="../static/paneer.jpg" width="200" height="100">
+				<img src="../static/veg4.jpg" width="200" height="100" style="float:left">
+				<img src="../static/veg2.jpg" width="200" height="100" style="float:left">
+				</div>
+			</article>
+			
+			<article>
+			    <h2 style='color:red'><a style='color:red' href="{{url_for('non_veg')}}">Non-Veg Special Dishes</a></h2>
+			    <p style='color:blue'>Special non-veg dishesh Like Chicke Thali, Chicken Fry, Chicke Masala, Fish Curry, Egg Curry, Egg Masal, Matan Thali, Chicken Tikka, Matan Tikka, Fry Fish etc.</p>
+				<div id="img">
+				<img src="../static/non5.jpg" width="200" height="100">
+				<img src="../static/non6.jpg" width="200" height="100" style="float:left">
+				<img src="../static/non7.jpg" width="200" height="100" style="float:left">
+				</div>
+			</article>
+			
+		</main>
+		
+	</section>
+	<aside>
+	    <div id="img">
+				<img src="../static/non5.jpg" width="200" height="100">
+				<img src="../static/non6.jpg" width="200" height="100" style="float:left">
+				<img src="../static/non7.jpg" width="200" height="100" style="float:left">
+				<img src="../static/non9.jpg" width="200" height="100" style="float:left">
+		</div>
+		<div id="img">
+		    <img src="../static/veg5.jpg" width="200" height="100">
+			<img src="../static/veg10.jpg" width="200" height="100" style="float:left">
+			<img src="../static/veg7.jpg" width="200" height="100" style="float:left">
+			<img src="../static/veg9.jpg" width="200" height="100" style="float:left">
+			<img src="../static/non6.jpg" width="200" height="100" style="float:left">
+			<img src="../static/non8.jpg" width="200" height="100" style="float:left">
+		</div>
+	</aside>
+	<footer>
+		<p>Owner: The Rohit Shelar</p>
+		<p>Address: The Rohit Shelar Food store Near To The Talegaon Railway Station, Talegaon Dabhade,Pune Contact:7066219553................</P>
+	</footer>
+
+
+</body>
+
+</html>
